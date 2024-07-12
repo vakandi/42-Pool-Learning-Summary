@@ -250,22 +250,63 @@ int main() {
 
 ### 7. Makefile
 
-**Concept**: A Makefile automates the building and compiling of programs, specifying dependencies and compilation commands.
+## Concept
+A Makefile automates the process of building and compiling programs by specifying the dependencies and the compilation commands. This tool is essential for efficiently managing complex build processes, especially in environments where multiple files and libraries are involved.
 
-**Example**:
+## Example
 
-```make
+Here's an example Makefile for a simple C project. This example will help you understand the basics of how to use a Makefile to compile a C program.
+
+### Makefile for Compiling a C Program
+
+```makefile
 # Project: C06
 # Example: Makefile for compiling a C program
 
+# Target: all
+# Description: Default target that depends on myprogram
 all: myprogram
 
+# Target: myprogram
+# Description: Compiles the myprogram executable from main.c
 myprogram: main.c
     gcc -o myprogram main.c
 
+# Target: clean
+# Description: Removes the myprogram executable
 clean:
     rm -f myprogram
 ```
+
+### Explanation
+
+1. **Target: all**
+   - The `all` target is typically the default target in a Makefile. When you run the `make` command without specifying any targets, `make` will build the first target it finds, which in this case is `all`.
+   - The `all` target depends on `myprogram`, so `make` will build `myprogram` when `all` is invoked.
+
+2. **Target: myprogram**
+   - This target specifies how to build the `myprogram` executable from the `main.c` source file.
+   - The command `gcc -o myprogram main.c` tells the GCC compiler to compile `main.c` and output an executable named `myprogram`.
+
+3. **Target: clean**
+   - The `clean` target is used to remove the `myprogram` executable. This is useful for cleaning up the directory and ensuring a fresh build.
+   - The command `rm -f myprogram` removes the `myprogram` file if it exists.
+
+### Usage
+
+1. **To compile the program:**
+   - Run `make` in the directory containing the Makefile. This will invoke the `all` target, which in turn will compile `myprogram`.
+
+   ```sh
+   make
+   ```
+
+2. **To clean up the directory:**
+   - Run `make clean` to remove the `myprogram` executable.
+
+   ```sh
+   make clean
+   ```
 
 ### 8. Compilation
 
