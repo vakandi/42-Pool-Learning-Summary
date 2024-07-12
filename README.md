@@ -88,8 +88,6 @@ Shell scripting involves automating tasks and managing files in Unix-like operat
 
 ### Apply Concepts:
 
-Certainly! Here's a detailed step-by-step guide on how to apply each concept with code examples for each project during the 42 pool competition:
-
 ### 1. Pointers
 
 **Concept**: Pointers in C are variables that store memory addresses, crucial for dynamic memory allocation and efficient data manipulation.
